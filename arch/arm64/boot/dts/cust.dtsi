@@ -1,0 +1,6 @@
+#include "cust_adc.dtsi"
+#include "cust_eint.dtsi"
+#include "cust_i2c.dtsi"
+#include "cust_kpd.dtsi"
+#include "cust_mt6755_msdc.dtsi"
+#include "i2c_device.dtsi"
