@@ -1,0 +1,8 @@
+
+config CUSTOM_KERNEL_HALL
+	bool "CUSTOM_KERNEL_HALL"
+	help
+	  hall sensor to detect accelerometer from off/on.
+          If the platform is supported for hall, this
+          configuration should be configured, and the hall
+          driver configuration should be configured as well.

@@ -1,0 +1,9 @@
+
+config MTK_LIS2DS12
+	bool "ST LIS2DS12 for MediaTek package"
+	default n
+	help
+	  It support different accelerometer sensor.
+          If this option is set,
+	  it will support
+          LIS2DS12 Accelerometer.

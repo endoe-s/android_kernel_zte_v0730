@@ -1,0 +1,52 @@
+#SPI
+config MTK_SPI
+	tristate "MediaTek SPI controller"
+	#depends on SPI
+	default n
+	---help---
+	This selects the MediaTek(R) SPI bus driver.
+	If you want to use MediaTek(R) SPI interface, say Y or M here.  If unsure, say N.
+
+config FINGERPRINT_SUPPORT
+	bool "fingerprint"
+	default n
+	---help---
+	Select this option to support fingerprint core.
+		
+config FINGERPRINT_GF3208_REE
+	bool "gf3208(goodix fingerprint sensor)  for dewav"
+	depends on INPUT && FINGERPRINT_SUPPORT
+	default n
+	help
+	It support different type sensor
+	in this platform. If this option
+	is set, it will support fingerprint gf3208 silead sensor .
+
+config MICROARRAY_FINGERPRINT
+	tristate "microarray Fingerprint"
+	depends on INPUT && FINGERPRINT_SUPPORT
+	default n
+	---help---
+	microarray Fingerprint chip afs121n support
+	
+config LEADCORE_FINGERPRINT
+	tristate "LeadCore Fingerprint"
+	depends on INPUT && FINGERPRINT_SUPPORT
+	default n
+	---help---
+	LeadCore fingerprint sensor lc1550 support
+	
+config CHIPSAILING_FINGERPRINT
+	tristate "ChipSailing Fingerprint"
+	depends on INPUT && FINGERPRINT_SUPPORT
+	default n
+	---help---
+	ChipSailing fingerprint sensor support
+
+config SUNWAVE_FINGERPRINT
+	tristate "sunwave Fingerprint"
+	depends on INPUT && FINGERPRINT_SUPPORT
+	default n
+	---help---
+	sunwave fingerprint sensor support
+	

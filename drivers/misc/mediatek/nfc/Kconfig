@@ -1,0 +1,3 @@
+config NFC_PN544
+	bool "PN544 for MediaTek package"
+	default n

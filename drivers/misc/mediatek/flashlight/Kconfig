@@ -1,0 +1,19 @@
+config MTK_FLASHLIGHT
+  bool CONFIG_MTK_FLASHLIGHT
+  default n
+  help
+    CONFIG_MTK_FLASHLIGHT
+
+config CUSTOM_KERNEL_FLASHLIGHT
+        string "CUSTOM_KERNEL_FLASHLIGHT"
+        help
+          Kernel space cameara flashlight driver. You can use this driver
+          choose cameara flashlight type.
+
+
+config P650A31_FLASHLIHGT_LM3646
+        string "P650A31_FLASHLIHGT_LM3646"
+        help
+          Kernel space cameara flashlight driver. You can use this driver
+          choose cameara flashlight type.
+
