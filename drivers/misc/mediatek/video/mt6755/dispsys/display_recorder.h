@@ -167,9 +167,9 @@ void dprec_reg_op(void *cmdq, unsigned int reg, unsigned int val, unsigned int m
 int dprec_handle_option(unsigned int option);
 int dprec_option_enabled(void);
 int dprec_init(void);
-void dprec_logger_trigger(DPREC_LOGGER_ENUM source, unsigned int val1, unsigned int val2);
-void dprec_logger_start(DPREC_LOGGER_ENUM source, unsigned int val1, unsigned int val2);
-void dprec_logger_done(DPREC_LOGGER_ENUM source, unsigned int val1, unsigned int val2);
+void dprec_logger_trigger(unsigned int source, unsigned int val1, unsigned int val2);
+void dprec_logger_start(unsigned int source, unsigned int val1, unsigned int val2);
+void dprec_logger_done(unsigned int source, unsigned int val1, unsigned int val2);
 void dprec_logger_reset(DPREC_LOGGER_ENUM source);
 void dprec_logger_reset_all(void);
 int dprec_logger_get_result_string(DPREC_LOGGER_ENUM source, char *stringbuf, int strlen);
@@ -178,7 +178,7 @@ int dprec_logger_get_result_value(DPREC_LOGGER_ENUM source, fpsEx *fps);
 void dprec_stub_irq(unsigned int irq_bit);
 void dprec_stub_event(DISP_PATH_EVENT event);
 unsigned int dprec_get_vsync_count(void);
-void dprec_logger_submit(DPREC_LOGGER_ENUM source, unsigned long long period,
+void dprec_logger_submit(unsigned int source, unsigned long long period,
 			 unsigned int fence_idx);
 
 void dprec_logger_dump(char *string);
