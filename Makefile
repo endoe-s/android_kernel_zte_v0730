@@ -776,6 +776,13 @@ ifeq ($(shell $(CONFIG_SHELL) $(srctree)/scripts/gcc-goto.sh $(CC)), y)
 	KBUILD_CFLAGS += -DCC_HAVE_ASM_GOTO
 endif
 
+# CUSTOM THINGS
+# KBUILD_CFLAGS   += -fcommon
+# KBUILD_CFLAGS += -Wno-error -Wno-attribute-alias -Wno-packed-not-aligned
+# Add these to the existing KBUILD_CFLAGS line or just below it
+KBUILD_CFLAGS += -fcommon -Wno-error -Wno-attribute-alias -Wno-packed-not-aligned -Wno-stringop-overflow -Wno-bool-compare
+# CUSTOM THINGS DONE
+
 include $(srctree)/scripts/Makefile.extrawarn
 
 # Add user supplied CPPFLAGS, AFLAGS and CFLAGS as the last assignments
