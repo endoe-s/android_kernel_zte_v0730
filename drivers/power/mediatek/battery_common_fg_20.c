@@ -111,6 +111,14 @@
 #if defined(CONFIG_MTK_PUMP_EXPRESS_PLUS_SUPPORT)
 #include <mach/mt_pe.h>
 #endif
+
+
+
+// CUSTOM THINGS
+#ifdef NEED_DISABLE_CHARGING_IN_META_MODE
+	BOOL charging_enable_in_meta_mode = KAL_FALSE;
+#endif
+// CUSTOM THINGS DONE
 /* ////////////////////////////////////////////////////////////////////////////// */
 /* Battery Logging Entry */
 /* ////////////////////////////////////////////////////////////////////////////// */
