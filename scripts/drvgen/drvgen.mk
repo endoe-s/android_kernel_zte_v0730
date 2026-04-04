@@ -27,10 +27,13 @@ DRVGEN_PREBUILT_CHECK := $(filter-out $(wildcard $(addprefix $(DRVGEN_PREBUILT_P
 .PHONY: drvgen
 drvgen: $(DRVGEN_FILE_LIST)
 ifneq ($(DRVGEN_PREBUILT_CHECK),)
+# $(DRVGEN_OUT)/cust.dtsi: $(DRVGEN_TOOL) $(DWS_FILE)
+# 	@mkdir -p $(dir $@)
+# # 	$(DRVGEN_TOOL) $(DWS_FILE) $(dir $@) $(dir $@) cust_dtsi
 $(DRVGEN_OUT)/cust.dtsi: $(DRVGEN_TOOL) $(DWS_FILE)
-	@mkdir -p $(dir $@)
-# 	$(DRVGEN_TOOL) $(DWS_FILE) $(dir $@) $(dir $@) cust_dtsi
-
+	mkdir -pv $(dir $@)
+	@echo "DEBUG: Running drvgen tool: $(DRVGEN_TOOL)"
+	$(DRVGEN_TOOL) $(DWS_FILE) $(dir $@) $(dir $@) cust_dtsi || (echo "DRVGEN FAILED WITH EXIT CODE $$?"; exit 1)
 else
 $(DRVGEN_FILE_LIST): $(DRVGEN_OUT)/% : $(DRVGEN_PREBUILT_PATH)/%
 	@mkdir -p $(dir $@)
