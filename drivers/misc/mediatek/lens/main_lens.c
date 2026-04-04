@@ -370,7 +370,9 @@ static int AF_i2c_probe(struct i2c_client *client, const struct i2c_device_id *i
 	spin_lock(&g_AF_SpinLock);
     g_s4AF_Opened = 0;
 	spin_unlock(&g_AF_SpinLock);
-	DW9767AF_SetI2Cclent_first(g_pstAF_I2Cclient, &g_AF_SpinLock, &g_s4AF_Opened);
+	#ifdef CONFIG_MTK_LENS_DW9767AF_SUPPORT
+		DW9767AF_SetI2Cclent_first(g_pstAF_I2Cclient, &g_AF_SpinLock, &g_s4AF_Opened);
+	#endif
 	//end
 	LOG_INF("Attached!!\n");
 
