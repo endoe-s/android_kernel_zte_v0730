@@ -18,6 +18,9 @@ ccflags-y += -nostdlib -Wl,-soname=linux-vdso.so.1 \
 # Workaround for bare-metal (ELF) toolchains that neglect to pass -shared
 # down to collect2, resulting in silent corruption of the vDSO image.
 ccflags-y += -Wl,-shared
+# CUSTOM THINGS
+ccflags-y += -fno-stack-protector -fno-asynchronous-unwind-tables -fno-unwind-tables
+# CUSTOM THINGS DONE
 
 obj-y += vdso.o
 extra-y += vdso.lds vdso-offsets.h
@@ -52,7 +55,8 @@ $(obj-vdso): %.o: %.S FORCE
 
 # Actual build commands
 quiet_cmd_vdsold = VDSOL   $@
-      cmd_vdsold = $(CC) $(c_flags) -Wl,-n -Wl,-T $^ -o $@
+#       cmd_vdsold = $(CC) $(c_flags) -Wl,-n -Wl,-T $^ -o $@
+      cmd_vdsold = $(CC) $(c_flags) -Wl,-n -Wl,--no-warn-rwx-segments -Wl,--orphan-handling=warn -Wl,-T $^ -o $@
 quiet_cmd_vdsoas = VDSOA   $@
       cmd_vdsoas = $(CC) $(a_flags) -c -o $@ $<
 

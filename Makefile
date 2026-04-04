@@ -781,6 +781,9 @@ endif
 # KBUILD_CFLAGS += -Wno-error -Wno-attribute-alias -Wno-packed-not-aligned
 # Add these to the existing KBUILD_CFLAGS line or just below it
 KBUILD_CFLAGS += -fcommon -Wno-error -Wno-attribute-alias -Wno-packed-not-aligned -Wno-stringop-overflow -Wno-bool-compare
+KBUILD_CFLAGS += -fno-PIE -no-pie
+KBUILD_AFLAGS += -fno-PIE -no-pie
+KBUILD_LDFLAGS += --no-warn-rwx-segments
 # CUSTOM THINGS DONE
 
 include $(srctree)/scripts/Makefile.extrawarn
