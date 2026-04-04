@@ -1665,7 +1665,7 @@ p2pFuncValidateAuth(IN P_ADAPTER_T prAdapter,
 			break;
 		}
 		/* Hotspot Blacklist */
-		if (prAuthFrame->aucSrcAddr) {
+		if (prAuthFrame) {
 			if (kalP2PCmpBlackList(prAdapter->prGlueInfo, prAuthFrame->aucSrcAddr)) {
 				fgReplyAuth = TRUE;
 				*pu2StatusCode = STATUS_CODE_ASSOC_DENIED_OUTSIDE_STANDARD;
