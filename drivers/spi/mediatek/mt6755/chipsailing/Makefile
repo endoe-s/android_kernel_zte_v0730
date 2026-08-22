@@ -34,5 +34,5 @@ $(warning 9=$(abspath $(srctree)/drivers/spi/mediatek/mt6755/chipsailing/autogai
 $(warning ===== END PATH DEBUG =====)
 
 obj-y   += cs15xx-spi.o
-ldflags-y += --whole-archive $(abspath $(srctree)/$(src)/cs_navigation.a))  --no-whole-archive
-ldflags-y += --whole-archive $(abspath $(srctree)/$(src)/autogain.a)) --no-whole-archive
+ldflags-y += --whole-archive $(abspath $(srctree)/$(src)/cs_navigation.a)  --no-whole-archive
+ldflags-y += --whole-archive $(abspath $(srctree)/$(src)/autogain.a) --no-whole-archive
